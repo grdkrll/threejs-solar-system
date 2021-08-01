@@ -1,6 +1,12 @@
 import './style.css'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import sun_texture from './2k_sun.jpg'
+import mercury_texture from './2k_mercury.jpg'
+import venus_texture from './2k_venus_atmosphere.jpg'
+import earth_texture from './2k_earth_daymap.jpg'
+import moon_texture from './2k_moon.jpg'
+import mars_texture from './2k_mars.jpg'
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -23,7 +29,7 @@ const controls = new OrbitControls(camera, renderer.domElement);
 // const gridHelper = new THREE.GridHelper(200, 50);
 // scene.add(gridHelper);
 
-const sunTexture = new THREE.TextureLoader().load('./2k_sun.jpg')
+const sunTexture = new THREE.TextureLoader().load(sun_texture)
 const sun = new THREE.Mesh(
   new THREE.SphereGeometry(32, 32, 32),
   new THREE.MeshStandardMaterial({
@@ -36,7 +42,7 @@ scene.add(sun)
 const light = new THREE.PointLight(0xffffff);
 scene.add(light)
 
-const mercuryTexture = new THREE.TextureLoader().load('./2k_mercury.jpg')
+const mercuryTexture = new THREE.TextureLoader().load(mercury_texture)
 const mercury = new THREE.Mesh(
   new THREE.SphereGeometry(3, 32, 32),
   new THREE.MeshStandardMaterial({
@@ -47,7 +53,7 @@ const mercury = new THREE.Mesh(
 scene.add(mercury);
 const mercuryObj = {obj: mercury, angle: 0}
 
-const venusTexture = new THREE.TextureLoader().load('./2k_venus_atmosphere.jpg')
+const venusTexture = new THREE.TextureLoader().load(venus_texture)
 const venus = new THREE.Mesh(
   new THREE.SphereGeometry(7, 32, 32),
   new THREE.MeshStandardMaterial({
@@ -59,7 +65,7 @@ scene.add(venus);
 const venusObj = {obj: venus, angle: 0}
 
 
-const earthTexture = new THREE.TextureLoader().load('./2k_earth_daymap.jpg')
+const earthTexture = new THREE.TextureLoader().load(earth_texture)
 const earth = new THREE.Mesh(
   new THREE.SphereGeometry(10, 32, 32),
   new THREE.MeshStandardMaterial({
@@ -70,7 +76,7 @@ const earth = new THREE.Mesh(
 scene.add(earth);
 const earthObj = {obj: earth, angle: 0}
 
-const moonTexture = new THREE.TextureLoader().load('./2k_moon.jpg')
+const moonTexture = new THREE.TextureLoader().load(moon_texture)
 const moon = new THREE.Mesh(
   new THREE.SphereGeometry(4, 32, 32),
   new THREE.MeshStandardMaterial({
@@ -81,7 +87,7 @@ const moon = new THREE.Mesh(
 scene.add(moon);
 const moonObj = {obj: moon, angle: 0};
 
-const marsTexture = new THREE.TextureLoader().load('./2k_mars.jpg');
+const marsTexture = new THREE.TextureLoader().load(mars_texture);
 const mars = new THREE.Mesh(
   new THREE.SphereGeometry(6, 32, 32),
   new THREE.MeshStandardMaterial({
